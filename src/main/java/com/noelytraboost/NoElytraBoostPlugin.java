@@ -47,6 +47,11 @@ public class NoElytraBoostPlugin extends JavaPlugin implements Listener {
             return;
         }
 
+        // Check if the firework was shot from a crossbow
+        if (firework.isShotAtAngle()) {
+            return;
+        }
+
         // Cancel the projectile launch - this prevents the rocket from being used
         // and the boost from being applied
         event.setCancelled(true);
